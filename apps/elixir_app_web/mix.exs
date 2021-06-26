@@ -24,7 +24,7 @@ defmodule ElixirAppWeb.MixProject do
   def application do
     [
       mod: {ElixirAppWeb.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :runtime_tools, :elixir_app]
     ]
   end
 
