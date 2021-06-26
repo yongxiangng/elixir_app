@@ -37,6 +37,13 @@ defmodule ElixirAppWeb.Router do
     scope "/" do
       pipe_through :browser
       live_dashboard "/dashboard", metrics: ElixirAppWeb.Telemetry
+      scope "/api", ElixirAppWeb do
+        pipe_through :api
+        scope "/v1" do
+          get "/list_all_modules", ModuleController, :index
+        end
+      end
     end
+
   end
 end

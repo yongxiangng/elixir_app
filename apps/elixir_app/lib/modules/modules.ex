@@ -1,6 +1,8 @@
 defmodule Modules.Module do
   use Ecto.Schema
 
+  @derive {Poison.Encoder, only: [:module_code, :module_title, :prerequisites]}
+
   schema "modules" do
     field :module_code, :string
     field :module_title, :string
