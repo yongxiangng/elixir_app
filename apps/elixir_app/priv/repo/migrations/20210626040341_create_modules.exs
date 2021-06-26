@@ -3,9 +3,9 @@ defmodule ElixirApp.Repo.Migrations.CreateModules do
 
   def change do
     create table(:modules) do
-      add(:module_code, :string)
-      add(:module_title, :string)
-      add(:prerequisites, :string)
+      add :module_code, :string
+      add :module_title, :string
+      add :prerequisites, references(:modules)
     end
   end
 end
