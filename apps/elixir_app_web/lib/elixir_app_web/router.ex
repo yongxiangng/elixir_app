@@ -41,6 +41,7 @@ defmodule ElixirAppWeb.Router do
         pipe_through :api
         scope "/v1" do
           get "/list_all_modules", ModuleController, :index
+          get "/update_modules", ModuleController, :update_modules
         end
       end
     end
