@@ -10,9 +10,10 @@ defmodule ElixirApp.Application do
       # Start the Ecto repository
       ElixirApp.Repo,
       # Start the PubSub system
-      {Phoenix.PubSub, name: ElixirApp.PubSub}
+      {Phoenix.PubSub, name: ElixirApp.PubSub},
       # Start a worker by calling: ElixirApp.Worker.start_link(arg)
       # {ElixirApp.Worker, arg}
+      Modules.Repo
     ]
 
     Supervisor.start_link(children, strategy: :one_for_one, name: ElixirApp.Supervisor)

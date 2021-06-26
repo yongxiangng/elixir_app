@@ -9,9 +9,15 @@
 # move said applications out of the umbrella.
 use Mix.Config
 
+config :elixir_app, Modules.Repo,
+  database: "elixir_app_repo",
+  username: "root",
+  password: "root",
+  hostname: "localhost"
+
 # Configure Mix tasks and generators
 config :elixir_app,
-  ecto_repos: [ElixirApp.Repo]
+  ecto_repos: [ElixirApp.Repo, Modules.Repo]
 
 config :elixir_app_web,
   ecto_repos: [ElixirApp.Repo],
