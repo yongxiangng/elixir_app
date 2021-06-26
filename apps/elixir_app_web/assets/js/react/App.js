@@ -13,7 +13,7 @@ function App() {
   }, [])
 
   const getMods = async () => {
-    const res = await fetch("http://localhost:4000/api/v1/list_all_modules")
+    const res = await fetch(`http://${window.location.hostname}:${window.location.port}/api/v1/list_all_modules`)
     const data = await res.json();
     setMods(data);
   }
