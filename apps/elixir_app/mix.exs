@@ -40,7 +40,8 @@ defmodule ElixirApp.MixProject do
       {:ecto_sql, "~> 3.4"},
       {:myxql, ">= 0.0.0"},
       {:jason, "~> 1.0"},
-      {:poison, "~> 3.1"}
+      {:poison, "~> 3.1"},
+      {:httpoison, "~> 1.8"}
     ]
   end
 
