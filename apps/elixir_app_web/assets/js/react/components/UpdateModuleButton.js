@@ -14,7 +14,9 @@ function UpdateModuleButton(props) {
   };
 
   const handleClick = () => {
-    const hide = year ? message.loading("Loading modules..", 0) : message.error("Please select year", 0);
+    const hide = year
+      ? message.loading("Loading modules..", 0)
+      : message.error("Please select year", 0);
     setTimeout(hide, 2500);
     if (year) {
       getMods(remote);
