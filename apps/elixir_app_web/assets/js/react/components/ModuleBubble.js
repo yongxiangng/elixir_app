@@ -8,11 +8,11 @@ function ModuleBubble(props) {
     "#34dddd",
     "#eb9486",
     "#9370db",
+    "#1133aa",
     "#7e7f9a",
     "#97a7b3",
-    "#1133aa",
   ];
-  const { module_code, module_title, prerequisites } = props;
+  const { module_code, module_title } = props;
   const color =
     module_code.match(/[0-9]/g).length == 0
       ? 0

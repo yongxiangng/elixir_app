@@ -1,6 +1,6 @@
-import ModuleBubble from "./components/ModuleBubble";
+import ModuleTable from "./components/ModuleTable";
 import React, { useState, useEffect } from "react";
-import { Input, Row, Col, Button } from "antd";
+import { Input, Row, Col, Button, message } from "antd";
 
 import "antd/dist/antd.css"; // or 'antd/dist/antd.less'
 import "./index.css";
@@ -20,6 +20,12 @@ function App() {
       .then((data) => setMods(data));
   };
 
+  const handleClick = () => {
+    const hide = message.loading("Loading modules..", 0);
+    setTimeout(hide, 2500);
+    getMods(remote);
+  };
+
   return (
     <div>
       Hello this is react!
@@ -28,12 +34,10 @@ function App() {
           <Input placeholder="Add module" />
         </Col>
         <Col span={6}>
-          <Button onClick={() => getMods(remote)}>Update Modules</Button>
+          <Button onClick={handleClick}>Update Modules</Button>
         </Col>
       </Row>
-      {mods.map((mod, key) => (
-        <ModuleBubble key={key} {...mod} />
-      ))}
+      <ModuleTable mods={mods} />
     </div>
   );
 }

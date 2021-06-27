@@ -8,7 +8,7 @@ defmodule Modules.API do
   end
 
   def update_modules do
-    url = "https://api.nusmods.com/v2/2018-2019/moduleList.json"
+    url = "https://api.nusmods.com/v2/2021-2022/moduleList.json"
     headers = []
     params = []
 
