@@ -4,13 +4,13 @@ import { Tag, Tooltip } from "antd";
 function ModuleBubble(props) {
   const colors = [
     "default",
-    "#13a000",
-    "#34dddd",
-    "#eb9486",
-    "#9370db",
-    "#1133aa",
-    "#7e7f9a",
-    "#97a7b3",
+    "green",
+    "cyan",
+    "blue",
+    "geekblue",
+    "purple",
+    "magenta",
+    "red",
   ];
   const { module_code, module_title } = props;
   const color =
@@ -19,7 +19,12 @@ function ModuleBubble(props) {
       : module_code.match(/[0-9]/g)[0];
   return (
     <Tooltip title={module_title}>
-      <Tag color={colors[color]}>{module_code}</Tag>
+      <Tag
+        color={colors[color]}
+        style={{ width: "90%", textAlign: "center", color: "black" }}
+      >
+        {module_code}
+      </Tag>
     </Tooltip>
   );
 }

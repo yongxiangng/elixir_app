@@ -1,10 +1,11 @@
-import React from "react";
-import { Select } from "antd";
+import React, { useState } from "react";
+import { Select, Space } from "antd";
+import ModuleTable from "./ModuleTable";
 
 function SelectModules(props) {
   const { Option } = Select;
-  const { mods, callback } = props;
-
+  const { mods } = props;
+  const [selectedMods, setSelectedMods] = useState([]);
   const children = [];
   mods.forEach((mod) => {
     children.push(
@@ -23,19 +24,23 @@ function SelectModules(props) {
         module_title: info[1],
       });
     });
-    callback(newArr);
+    setSelectedMods(newArr);
   };
 
   return (
-    <Select
-      mode="multiple"
-      allowClear
-      style={{ width: "100%" }}
-      placeholder="Select your modules here"
-      onChange={handleChange}
-    >
-      {children}
-    </Select>
+    <Space direction="vertical" style={{ width: "100%" }}>
+      <Select
+        mode="multiple"
+        allowClear
+        style={{ width: "100%" }}
+        placeholder="Select your modules here"
+        onChange={handleChange}
+      >
+        {children}
+      </Select>
+
+      <ModuleTable mods={selectedMods} />
+    </Space>
   );
 }
 

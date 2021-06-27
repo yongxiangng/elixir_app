@@ -1,9 +1,11 @@
-import React from "react";
-import { Select } from "antd";
+import React, { useState } from "react";
+import { Select, Row, Col } from "antd";
+import UpdateModuleButton from "./UpdateModuleButton";
 
 function SelectYear(props) {
   const { Option } = Select;
-  const { callback } = props;
+  const { onClick } = props;
+  const [selectedAY, setSelectedAY] = useState(undefined);
   const today = new Date();
 
   const currAY =
@@ -19,14 +21,30 @@ function SelectYear(props) {
   );
 
   return (
-    <Select
-      allowClear
-      style={{ width: "100%" }}
-      placeholder="Select academic year"
-      onChange={callback}
-    >
-      {children}
-    </Select>
+    <Row gutter={16} justify="center" align="middle">
+      <Col span={18}>
+        <Select
+          allowClear
+          style={{ width: "100%" }}
+          placeholder="Select academic year"
+          onChange={setSelectedAY}
+        >
+          {children}
+        </Select>
+      </Col>
+      <Col
+        span={6}
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "center",
+        }}
+      >
+        <UpdateModuleButton year={selectedAY} onClick={onClick}>
+          Update Modules
+        </UpdateModuleButton>
+      </Col>
+    </Row>
   );
 }
 
