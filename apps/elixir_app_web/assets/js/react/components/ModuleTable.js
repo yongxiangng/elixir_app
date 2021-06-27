@@ -11,10 +11,7 @@ function ModuleTable(props) {
     <Row gutter={[16, 16]}>
       {mods.map((mod, key) => (
         <Col key={key} span={4}>
-          <ModuleBubble
-            module_code={mod.module_code}
-            module_title={mod.module_title}
-          />
+          <ModuleBubble {...mod} />
         </Col>
       ))}
     </Row>
