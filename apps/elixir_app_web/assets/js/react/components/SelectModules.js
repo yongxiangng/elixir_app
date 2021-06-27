@@ -21,7 +21,6 @@ function SelectModules(props) {
         allowClear
         style={{ width: "100%" }}
         placeholder="Select your modules here"
-        onChange={handleChange}
       >
         {children}
       </Select>
