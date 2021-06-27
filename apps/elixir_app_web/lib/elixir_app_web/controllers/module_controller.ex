@@ -16,4 +16,14 @@ defmodule ElixirAppWeb.ModuleController do
       data: modules
     )
   end
+
+  def update_modules(conn, _params) do
+    modules = Modules.API.update_modules()
+    |> Enum.map(&decode/1)
+    render(
+      conn,
+      "index.json",
+      data: modules
+    )
+  end
 end
