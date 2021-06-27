@@ -1,6 +1,7 @@
 import ModuleTable from "./components/ModuleTable";
 import SelectModules from "./components/SelectModules";
 import SelectYear from "./components/SelectYear";
+import ModuleGraph from "./components/ModuleGraph";
 import React, { useState, useEffect } from "react";
 import { Divider } from "antd";
 
@@ -22,11 +23,13 @@ function App() {
 
   return (
     <>
-      <Divider orientation="left">Select year</Divider>
+      <Divider orientation="left">Select Year</Divider>
       <SelectYear onClick={setMods} />
       <Divider orientation="left">Search</Divider>
       <SelectModules mods={mods} />
-      <Divider orientation="left">All modules</Divider>
+      <Divider orientation="left">Dependency Graph</Divider>
+      <ModuleGraph />
+      <Divider orientation="left">All Modules</Divider>
       <ModuleTable mods={mods} />
     </>
   );
