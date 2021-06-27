@@ -1,7 +1,8 @@
 import ModuleTable from "./components/ModuleTable";
 import UpdateModuleButton from "./components/UpdateModuleButton";
+import SelectModules from "./components/SelectModules";
 import React, { useState, useEffect } from "react";
-import { Input, Row, Col } from "antd";
+import { Row, Col, Divider } from "antd";
 
 import "antd/dist/antd.css"; // or 'antd/dist/antd.less'
 import "./index.css";
@@ -22,10 +23,10 @@ function App() {
 
   return (
     <div>
-      Hello this is react!
+      <Divider orientation="left">Search</Divider>
       <Row gutter={16} align="middle" justify="center">
         <Col span={18}>
-          <Input placeholder="Add module" />
+          <SelectModules mods={mods} />
         </Col>
         <Col span={6}>
           <UpdateModuleButton onClick={setMods}>
@@ -33,6 +34,7 @@ function App() {
           </UpdateModuleButton>
         </Col>
       </Row>
+      <Divider orientation="left">All modules</Divider>
       <ModuleTable mods={mods} />
     </div>
   );

@@ -5,7 +5,6 @@ import ModuleBubble from "./ModuleBubble";
 function ModuleTable(props) {
   const { mods } = props;
   const len = mods.length;
-  const rows = len / 6;
 
   return (
     <Row gutter={[16, 16]}>
