@@ -9,7 +9,7 @@ function ModuleTable(props) {
   return (
     <Row gutter={[16, 16]}>
       {mods.map((mod, key) => (
-        <Col key={key} span={4}>
+        <Col key={key} span={4} style={{ display: "flex", flexDirection: "row", justifyContent: "center" }}>
           <ModuleBubble {...mod} />
         </Col>
       ))}

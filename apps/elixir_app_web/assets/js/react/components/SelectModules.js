@@ -15,16 +15,14 @@ function SelectModules(props) {
   });
 
   return (
-    <>
-      <Select
-        mode="multiple"
-        allowClear
-        style={{ width: "100%" }}
-        placeholder="Select your modules here"
-      >
-        {children}
-      </Select>
-    </>
+    <Select
+      mode="multiple"
+      allowClear
+      style={{ width: "100%" }}
+      placeholder="Select your modules here"
+    >
+      {children}
+    </Select>
   );
 }
 
