@@ -4,6 +4,8 @@ defmodule Modules.Module do
   @derive {Poison.Encoder, only: [:module_code, :module_title]}
 
   schema "modules" do
+    has_many :prerequisites, Modules.Prerequisite
+
     field :module_code, :string
     field :module_title, :string
   end
